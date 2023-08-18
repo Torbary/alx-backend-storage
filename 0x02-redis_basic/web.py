@@ -34,17 +34,3 @@ def cach_data(method: Callable) -> Callable:
 def get_page(url: str) -> str:
     """Return the content of a URL after ahing the request response"""
     return requests.get(url).text
-
-
-if __name__ == "__main__":
-    slow_url = "http://slowwly.robertomurray.co.uk/delay/5000/url/https://github.com"
-
-    # Fetch and cache the content from a slow URL
-    content = get_page(slow_url)
-    print("Content from slow URL:")
-    print(content)
-
-    # Retrieve cached content
-    cached_content = get_page(slow_url)
-    print("\nCached Content:")
-    print(cached_content)
